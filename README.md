@@ -1,1 +1,261 @@
-# my-static-website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MIdterm Exam</title>
+  <style>
+    /* Base Styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: linear-gradient(135deg, #dbe6e4 0%, #bfe9ff 100%);
+      font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: #2c3852;
+    }
+    a {
+      color: #2188cd;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Tag selectors */
+    header {
+      background: linear-gradient(90deg, #4158d0, #c850c0);
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(65, 88, 208, 0.15);
+      padding: 36px 32px 24px 32px;
+      text-align: center;
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+    nav {
+      background: #f2f6fb;
+      padding: 12px 0;
+      box-shadow: 0 2px 6px #b5bbd41a;
+      border-bottom: 1.5px solid #e6e9f0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      margin-bottom: 25px;
+    }
+    article {
+      margin-bottom: 22px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px #cbd4ec1a;
+      border-left: 4px solid #4158d0;
+      transition: box-shadow 0.2s;
+    }
+    article:hover {
+      box-shadow: 0 6px 24px #c850c025;
+      border-left: 4px solid #c850c0;
+    }
+    aside {
+      background: #e2ecfa;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 12px #b5bbd466;
+      margin-left: 28px;
+      min-width: 240px;
+      max-width: 300px;
+      font-size: 1.04em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    footer {
+      background: #2b2e4a;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0 13px 0;
+      font-size: 1em;
+      letter-spacing: 1px;
+      margin-top: 36px;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+      box-shadow: 0 -2px 10px #2b2e4a22;
+    }
+    /* Layout using class selectors */
+    .main-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      max-width: 1100px;
+      margin: 34px auto 0 auto;
+      padding: 0 24px;
+    }
+    .main-content {
+      flex: 3;
+    }
+    .side-content {
+      flex: 1;
+    }
+    .highlight {
+      background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+      color: #273469;
+      font-weight: bold;
+      padding: 3px 9px;
+      border-radius: 6px;
+      box-shadow: 0 2px 7px #ded1f180;
+    }
+    .sidebar-title {
+      color: #6a3eb1;
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    /* Unique styling with ID selectors */
+    #site-title {
+      font-size: 2.3em;
+      font-family: 'Segoe UI', 'Arial Black', Arial, sans-serif;
+      letter-spacing: 3px;
+      text-shadow: 2px 3px 18px #c850c080;
+      margin-bottom: 4px;
+    }
+    #tip {
+      color: #68364d;
+      border-left: 4px solid #c850c0;
+      padding-left: 13px;
+      margin-top: 12px;
+      background: #ffe3f6;
+      font-style: italic;
+      font-size: 1.02em;
+      box-shadow: 0 1px 4px #c850c030;
+      border-radius: 7px;
+    }
+    /* Responsive design */
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        gap: 0;
+      }
+      aside {
+        margin: 24px 0 0 0;
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 600px) {
+      header {
+        padding: 26px 10px 18px 10px;
+      }
+      .main-container {
+        padding: 0 5px;
+      }
+      article {
+        padding: 12px;
+      }
+      aside {
+        padding: 12px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="site-title">Midterm Exam</h1>
+    <p class="highlight">Zyra MAe Honor</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Docs</a></li>
+    </ul>
+  </nav>
+  <div class="main-container">
+    <section class="main-content">
+      <h2>Featured Articles</h2>
+      <article>
+        <h2>Student Information</h2>
+  <p id="displayName"></p>
+  <p id="displayCourse"></p>
+  <script>
+    // Declare variables
+    let name = "Zyra Mae Honor";
+    let course = "Web Development";
+
+    // Output to the HTML page
+    document.getElementById('displayName').textContent = "Name: " + name;
+    document.getElementById('displayCourse').textContent = "Course: " + course;
+  </script>
+  <button onclick="showMessage()">Click Me!</button>
+
+  <script>
+    function showMessage() {
+      alert("Zyra Mae Honor");
+    }
+  </script>
+  <h2>Type Something:</h2>
+  <input type="text" id="userInput" placeholder="Enter your text here">
+
+  <p>You typed: <span id="output"></span></p>
+
+  <script>
+    
+    // Get references to HTML elements
+    const input = document.getElementById('userInput');
+    const output = document.getElementById('output');
+
+    // Add event listener to update output as user types
+    input.addEventListener('input', function() {
+      output.textContent = input.value;
+    });
+  </script>
+     <h2 id="greeting">Welcome to My Page!</h2>
+  <button id="changeBtn">Change Greeting</button>
+
+  <script>
+    // Get references to the elements
+    const greeting = document.getElementById('greeting');
+    const button = document.getElementById('changeBtn');
+
+    // Add a click event listener to the button
+    button.addEventListener('click', function() {
+      greeting.textContent = "Hello, the content has changed!";
+    });
+  </script>
+        <h3>Semantic HTML: A Modern Web Foundation</h3>
+        <p>
+          Elements like <span class="highlight">&lt;header&gt;</span>,
+          <span class="highlight">&lt;nav&gt;</span>,
+          <span class="highlight">&lt;section&gt;</span>,
+          <span class="highlight">&lt;article&gt;</span>,
+          <span class="highlight">&lt;aside&gt;</span>, and
+          <span class="highlight">&lt;footer&gt;</span> bring clear meaning and structure to your web pages.
+        </p>
+        
+      </article>
+      <article>
+     
+        <h3>CSS Selectors: Tag, Class, and ID</h3>
+        <p>
+          <strong>Tag selectors</strong> target all elements of a type.<br>
+          <strong>Class selectors</strong> (e.g. <span class="highlight">.highlight</span>) are reusable across different elements.<br>
+          <strong>ID selectors</strong> (e.g. <span class="highlight">#site-title</span>) are unique for one element per page.
+        </p>
+      </article>
+    </section>
+    <aside class="side-content">
+      <h4 class="sidebar-title">Pro Tip</h4>
+      <div id="tip">
+        Use semantic tags for accessibility and SEO, ID selectors for uniqueness, and class selectors for flexibility and reuse.
+      </div>
+    </aside>
+  </div>
+  <footer>
+    &copy; 2026 Stylish Selector Demo &mdash; All rights reserved.
+  </footer>
+</body>
+</html>
